@@ -1,0 +1,142 @@
+# Orbsi — Eleventy build. Netlify runs "npm run build" and publishes _site.
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+
+# ---------------------------------------------------------------
+# 1. REDIRECTS FROM THE OLD SITE
+#    Every retired URL points at the closest surviving page, not the
+#    homepage. Google treats an irrelevant redirect as a soft 404.
+#    These must come before the clean-URL rules below.
+# ---------------------------------------------------------------
+
+# Renamed service pages
+[[redirects]]
+  from = "/full-infrastructure-build"
+  to = "/company-redesign"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ceo-leadership-development"
+  to = "/leadership-development"
+  status = 301
+  force = true
+
+# Retired: the free audit was an infrastructure assessment
+[[redirects]]
+  from = "/free-infrastructure-audit"
+  to = "/company-redesign"
+  status = 301
+  force = true
+
+# Retired: visionary vs operator was about the founder's role
+[[redirects]]
+  from = "/visionary-vs-operator"
+  to = "/company-redesign"
+  status = 301
+  force = true
+
+# Retired: workshops
+[[redirects]]
+  from = "/workshops/people-foundations"
+  to = "/company-redesign"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workshops/operations-foundations"
+  to = "/company-redesign"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workshops/*"
+  to = "/company-redesign"
+  status = 301
+  force = true
+
+# Retired: the waitlist was "tell me when there's news", which is the newsletter now
+[[redirects]]
+  from = "/waitlist"
+  to = "/newsletter"
+  status = 301
+  force = true
+
+# ---------------------------------------------------------------
+# 2. BOOKING ROUTES
+#    All three old booking URLs go to the same place.
+#    >>> REPLACE https://scheduler.zoom.us/orbsi/discovery-call WITH YOUR REAL LINK <<<
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "/book-a-call"
+  to = "https://scheduler.zoom.us/orbsi/discovery-call"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/get-started"
+  to = "https://scheduler.zoom.us/orbsi/discovery-call"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/get-started-advisory"
+  to = "https://scheduler.zoom.us/orbsi/discovery-call"
+  status = 301
+  force = true
+
+# ---------------------------------------------------------------
+# 3. CLEAN URLS
+#    /about serves about.html
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "/company-redesign"
+  to = "/company-redesign.html"
+  status = 200
+[[redirects]]
+  from = "/leadership-development"
+  to = "/leadership-development.html"
+  status = 200
+[[redirects]]
+  from = "/founder-advisory"
+  to = "/founder-advisory.html"
+  status = 200
+[[redirects]]
+  from = "/therapeutic-services"
+  to = "/therapeutic-services.html"
+  status = 200
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/newsletter"
+  to = "/newsletter.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200
+
+# ---------------------------------------------------------------
+# 4. HEADERS
+# ---------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # The stylesheet and images have stable filenames, so they must revalidate.
+    # A long immutable cache here means a returning visitor keeps an old
+    # stylesheet after a deploy and the layout breaks.
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

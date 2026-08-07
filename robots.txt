@@ -1,0 +1,33 @@
+# Orbsi
+# Search crawlers and AI crawlers are both welcome.
+
+User-agent: *
+Allow: /
+
+# AI crawlers, named explicitly so there is no ambiguity
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+
+# Single-file previews are not pages, keep them out of the index
+Disallow: /*-standalone.html
+Disallow: /thank-you
+
+Sitemap: https://www.orbsi.co/sitemap.xml

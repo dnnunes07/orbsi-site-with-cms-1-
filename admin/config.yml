@@ -1,0 +1,71 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/insights"
+public_folder: "/img/insights"
+
+site_url: https://www.orbsi.co
+display_url: https://www.orbsi.co
+logo_url: https://www.orbsi.co/img/orbsi-logo.png
+
+publish_mode: simple
+
+collections:
+  - name: "insights"
+    label: "Insights"
+    label_singular: "Article"
+    folder: "insights/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    summary: "{{title}}"
+    sortable_fields: ["date", "title"]
+    editor:
+      preview: false
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The headline. This becomes the page title and the H1."
+
+      - label: "Web address"
+        name: "slug"
+        widget: "string"
+        hint: "Made from the title. Lowercase words joined by hyphens, for example why-work-comes-back. Change it before you publish, not after."
+
+      - label: "Publication date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: true
+
+      - label: "One-line summary"
+        name: "summary"
+        widget: "text"
+        hint: "Shows on the Insights index under the title. One sentence."
+
+      - label: "Meta description"
+        name: "description"
+        widget: "text"
+        hint: "Shows in Google results and link previews. Aim for 140 to 160 characters."
+
+      - label: "Social preview image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "1200 by 630 pixels. Leave empty to use the default Orbsi image."
+
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: true
+        hint: "Turn this off to keep the article as a draft."
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        buttons: ["bold", "italic", "link", "heading-two", "heading-three", "quote", "bulleted-list", "numbered-list"]
+        editor_components: []

@@ -1,0 +1,117 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ date | isoDate }}",
+  "dateModified": "{{ dateModified | default(date) | isoDate }}",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.orbsi.co/#danielle"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.orbsi.co/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.orbsi.co{{ page.url }}"
+  }
+}
+</script>
+{% endblock %}
+
+<style>
+  .art-meta{margin-top:1.6rem;font-size:.6875rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--slate)}
+  .art-body{max-width:68ch;padding-bottom:clamp(2.5rem,5vw,4rem)}
+  .art-body > * + *{margin-top:1.35rem}
+  .art-body p{font-size:1.06rem;line-height:1.78;color:var(--ink-2)}
+  .art-body h2{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.025em;
+    line-height:1.18;color:var(--ink);margin-top:2.8rem}
+  .art-body h3{font-size:clamp(1.12rem,1.8vw,1.35rem);font-weight:800;letter-spacing:-.015em;
+    color:var(--ink);margin-top:2rem}
+  .art-body a{color:var(--violet);text-decoration:underline;text-underline-offset:.18em;
+    text-decoration-thickness:1.5px;font-weight:600}
+  .art-body strong{font-weight:700;color:var(--ink)}
+  .art-body ul,.art-body ol{padding-left:1.3em}
+  .art-body li{font-size:1.06rem;line-height:1.78;color:var(--ink-2);margin-top:.5rem}
+  .art-body blockquote{border-left:3px solid var(--violet);padding:.2rem 0 .2rem 1.5rem;margin-left:0}
+  .art-body blockquote p{font-size:1.2rem;line-height:1.6;color:var(--ink);font-weight:500}
+  .sub-block{background:var(--paper);border:1px solid var(--pale);border-left:3px solid var(--violet);
+    padding:clamp(1.8rem,3.5vw,2.6rem);max-width:68ch}
+  .sub-block h2{font-size:clamp(1.35rem,2.4vw,1.9rem);font-weight:800;letter-spacing:-.025em;
+    line-height:1.2;max-width:22ch}
+  .sub-block p{margin-top:.9rem;font-size:1rem;line-height:1.7;color:var(--ink-2);max-width:52ch}
+  .sub-form{margin-top:1.5rem;display:flex;gap:.7rem;flex-wrap:wrap}
+  .sub-form input[type=email]{flex:1 1 16rem;min-width:0;padding:.85rem 1rem;font:inherit;
+    font-size:1rem;border:1.5px solid var(--pale);border-radius:2px;background:#fff;color:var(--ink)}
+  .sub-form input[type=email]:focus{outline:none;border-color:var(--violet)}
+  .sub-form button{padding:.85rem 1.6rem;font:inherit;font-size:.72rem;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;color:#fff;background:var(--violet);
+    border:0;border-radius:2px;cursor:pointer}
+  .sub-form button:hover{background:var(--purple)}
+  .art-back{margin-top:2.5rem;font-size:.6875rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--violet)}
+</style>
+
+<header id="main" class="band--paper" style="padding:clamp(3rem,6vw,5.5rem) 0 clamp(2.5rem,5vw,4rem);position:relative;overflow:hidden">
+  <span class="ring-mark" style="width:min(46vw,560px);aspect-ratio:1;border:clamp(26px,3.6vw,52px) solid var(--sky-band);right:-15%;top:-26%;opacity:.7"></span>
+  <div class="wrap" style="position:relative;z-index:1">
+    <a href="/insights" class="eyebrow" style="margin-bottom:1.2rem">Insights</a>
+    <h1 class="rv" style="font-size:clamp(2.1rem,5vw,4.1rem);font-weight:800;letter-spacing:-.038em;line-height:1.04;max-width:19ch">{{ title }}</h1>
+    <p class="art-meta rv"><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>
+  </div>
+</header>
+
+<div class="ticker ticker--sky" aria-hidden="true">
+  <div class="tk">
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+    <span class="lbl">Insights</span><span class="ring"></span>
+  </div>
+</div>
+
+<section class="band band--white" style="padding-top:clamp(2.5rem,5vw,4rem)">
+  <div class="wrap">
+    <div class="art-body">
+      {{ content | safe }}
+    </div>
+
+    <div class="sub-block">
+      <span class="eyebrow" style="margin-bottom:1rem">The exercise</span>
+      <h2>Figure out what still depends on <span class="acc">you</span>.</h2>
+      <p>A one-week exercise for tracking every question, decision, and problem that comes to you,
+         and sorting what should actually be yours. Sent when you subscribe.</p>
+      <form class="sub-form" action="https://behindtheinfrastructure.substack.com/api/v1/free"
+            method="post" target="_blank">
+        <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+        <input type="hidden" name="first_url" value="https://behindtheinfrastructure.substack.com">
+        <button type="submit">Send it to me</button>
+      </form>
+    </div>
+
+    <p style="margin-top:2.5rem"><a href="/insights" class="art-back">All insights</a></p>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap">
+    <span class="eyebrow">Start a conversation</span>
+    <h2 class="h-sec rv" style="max-width:18ch">Let's Redesign Your Company <span class="acc">Together</span>.</h2>
+    <div class="btn-row rv" style="margin-top:clamp(2rem,4vw,2.75rem)">
+      <a href="https://scheduler.zoom.us/orbsi/discovery-call" class="btn btn--sun">Book a Conversation</a>
+    </div>
+  </div>
+</section>

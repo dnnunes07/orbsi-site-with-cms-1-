@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Orbsi — supplementary styles (mobile navigation + footer social links)
+   --------------------------------------------------------------------------
+   ADDITIVE ONLY. This file does not modify or override anything in
+   css/orbsi.css. Every rule is either a new class (.nav-burger, .mnav) or
+   scoped inside the <=860px media query, which is the breakpoint where
+   orbsi.css already hides .nav-links.
+
+   To remove this feature entirely, delete the <link> and <script> lines
+   from the nine HTML files. Nothing else needs unpicking.
+
+   Colours and spacing come from the variables already defined in
+   orbsi.css :root, so this stays in step with the design system.
+   ========================================================================== */
+
+/* Hidden by default. Only ever shown below the breakpoint. */
+.nav-burger { display: none; }
+.mnav       { display: none; }
+
+@media (max-width: 860px) {
+
+  /* ---- the toggle button ------------------------------------------------ */
+  .nav-burger {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;          /* pushes it to the right of the logo */
+    width: 44px;                /* 44px is the minimum comfortable touch target */
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    color: var(--ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-burger:focus-visible {
+    outline: 3px solid var(--hl);
+    outline-offset: 2px;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform .25s ease, opacity .18s ease;
+  }
+  .nav-burger span + span { margin-top: 5px; }
+
+  /* burger morphs into a cross when open */
+  .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* The desktop CTA is duplicated into the panel, so hide the one in the bar.
+     orbsi.css already hides .nav-links at this width. */
+  .nav-in .btn-nav { display: none; }
+
+  /* ---- the panel -------------------------------------------------------- */
+  .mnav {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--navh, 66px);     /* JS measures the real nav height */
+    bottom: 0;
+    z-index: 59;                /* .nav is 60, so the bar stays above the panel */
+    background: var(--white);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.5rem var(--gut) 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .22s ease, transform .22s ease, visibility .22s;
+  }
+  .mnav[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  /* section headings, matching the footer column headings in orbsi.css */
+  .mnav h2 {
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin: 0 0 .85rem;
+  }
+  .mnav h2 + ul { margin-bottom: 2rem; }
+
+  .mnav ul { list-style: none; margin: 0; padding: 0; }
+  .mnav li { border-bottom: 1px solid var(--pale); }
+
+  .mnav a {
+    display: block;
+    padding: .95rem 0;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-2);
+    transition: color .18s;
+  }
+  .mnav a:hover,
+  .mnav a:focus-visible { color: var(--violet); }
+
+  /* the page's own call to action, cloned from the nav bar */
+  .mnav .mnav-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: .5rem;
+  }
+
+  /* stop the page behind the panel from scrolling */
+  body[data-mnav-open="true"] { overflow: hidden; }
+}
+
+/* Belt and braces: never show the panel above the breakpoint, even if a
+   stale data-open attribute survives a resize. */
+@media (min-width: 861px) {
+  .mnav { display: none !important; }
+}
+
+/* Respect a reduced-motion preference, as the rest of the site does. */
+@media (prefers-reduced-motion: reduce) {
+  .mnav, .nav-burger span { transition: none; }
+}
+
+/* ==========================================================================
+   Footer social links
+   --------------------------------------------------------------------------
+   New classes only. Nothing here overrides orbsi.css.
+   ========================================================================== */
+
+.foot-social {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  margin-top: 1.15rem;
+}
+
+.foot-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;               /* comfortable touch target on a phone */
+  height: 38px;
+  margin-left: -9px;         /* optically aligns the first icon with the text above */
+  border-radius: 3px;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .18s, background .18s;
+}
+.foot-social a + a { margin-left: 0; }
+
+.foot-social a:hover,
+.foot-social a:focus-visible {
+  color: var(--violet);
+  background: var(--sky-wash);
+}
+.foot-social a:focus-visible {
+  outline: 3px solid var(--hl);
+  outline-offset: 2px;
+}
+
+.foot-social svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foot-social a { transition: none; }
+}
+
+/* ==========================================================================
+   Testimonial headshots
+   --------------------------------------------------------------------------
+   New class only. Mirrors the dimensions of .quote .avatar-ph in orbsi.css
+   so a card with a photo lines up with one still waiting for its photo.
+   ========================================================================== */
+
+.quote .avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1.3rem;
+  border: 3px solid rgba(255, 255, 255, .42);
+}
+
+/* on the light bands the ring picks up the brand violet, matching
+   how orbsi.css recolours .avatar-ph in the same context */
+.band--paper .quote .avatar,
+.band--white .quote .avatar {
+  border-color: rgba(58, 12, 163, .32);
+}
