@@ -1,7 +1,7 @@
 ---
 title: Delegation Isn’t the Problem. Your Company Was Never Built for Someone
   Else to Take Responsibility.
-slug: why-the-work-keeps-coming-back
+slug: Delegation-isnt-the-problem
 date: 2026-08-07
 summary: Founder dependency is a different problem than poor delegation. It's
   that your company was never built for someone else to take responsibility.
