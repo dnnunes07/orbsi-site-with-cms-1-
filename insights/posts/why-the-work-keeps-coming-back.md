@@ -1,35 +1,81 @@
 ---
-title: Why the work keeps coming back after you hand it off
+title: Delegation Isn’t the Problem. Your Company Was Never Built for Someone
+  Else to Take Responsibility.
 slug: why-the-work-keeps-coming-back
 date: 2026-08-07
-summary: Founder dependency is a different problem than poor delegation, and it shows up for two reasons at the same time.
-description: Why delegated work returns to the founder, why delegation advice and systems work each only solve half of it, and what company redesign changes.
+summary: Founder dependency is a different problem than poor delegation. It's
+  that your company was never built for someone else to take responsibility.
+description: Why delegated work returns to the founder, why delegation advice
+  and systems work each only solve half of it, and what company redesign
+  changes.
 published: true
 ---
-Most founders in this position have already tried the obvious thing. You handed something off. It came back. You told yourself it was faster to handle it, and it was, and now you are back where you started with one more piece of evidence that nobody else can do it.
+You hand something off because you know you should not be the one doing it anymore. A few days later, the person comes back with questions. A decision needs your approval. Something was done differently than you expected. You look at it and think, *I could have done this faster myself.*
 
-In the beginning, you were the thing holding it together. You held the standards, the customer knowledge, the priorities, and the judgment. You were, in effect, the operating system the business ran on, and at that size it was the right design. Then the business grew, and the company was never redesigned to hold any of it.
+### **So you step back in.**
 
-## Founder dependency is not poor delegation
+Maybe you fix it. Maybe you finish it. Maybe you take it back completely. And without realizing it, both you and the person on your team learn the same thing: when something gets complicated, it comes back to you. You'll handle it.
 
-What you are dealing with is founder dependency, and it is a different problem than poor delegation. It shows up for two reasons at the same time.
+### That can start to look like a delegation problem. Usually, it is more than that.
 
-### The structural reason
+When your business was small, it made sense for you to be involved in almost everything. You knew the customers well, the standards, the history of the business, the priorities, and the reasons behind most decisions. If someone had a question, asking you was efficient because you had the answer.
 
-The task moved, but the responsibility did not. Someone was handed work without the context, the decision authority, or the defined standard that would let them finish it without checking. So it comes back to you, and it should, because the company never actually transferred it. Nothing about that is a people problem.
+The business grows, though, and that way of working starts to create a problem.
 
-This is what decision rights are for. Your managers need to know what they can decide on their own, what they should tell you about afterward, and what genuinely needs your approval. Until that exists somewhere other than your head, bringing it to you is the safest thing they can do, and they are right to do it.
+There are more employees, more customers, more managers, maybe more locations, more decisions, and more things happening at the same time. But the company often continues operating as if the founder is still supposed to know, review, approve, or fix everything.
 
-### The behavioral reason
+That is where things start coming back to you.
 
-Answering quickly, reviewing the work, stepping in when something looked off, all of that lowered your uncertainty and all of it worked. Your team learned to wait for you. You learned that stepping in feels better than wondering. Neither of those makes you controlling or a poor delegator.
+Someone may technically be responsible for scheduling, but you still approve the schedule.
 
-## Why one fix on its own does not hold
+A manager may be responsible for performance, but they still wait for you before addressing an issue.
 
-Advice about delegation only addresses the second reason, and only on the surface. Building systems only addresses the first. When you change one and not the other, the pattern returns within a few weeks, and it starts to feel like proof that this cannot be fixed.
+You may have handed off hiring, but you are still involved in the interviews, deciding what the role should pay, what a strong candidate looks like, and whether the person should receive an offer.
 
-> Company redesign changes both. The structure changes so the work has somewhere else to live, and the founder's role changes so it stays there.
+You may have promoted someone into leadership because they were great in their previous role, only to realize the skills that made them successful there are not the same skills they now need to lead people, make decisions, give feedback, and hold others accountable.
 
-Danielle is a licensed therapist and a former operations director, which is why Orbsi can name what is happening in the structure and what is happening in the founder at the same time, rather than treating one as the explanation for the other.
+In those situations, the work moved. The ownership did not.
 
-More on what changes on the [company redesign](https://www.orbsi.co/company-redesign) page.
+That distinction matters.
+
+If someone is expected to own something, they need more than a task. They need to know what they are responsible for, what decisions they can make, what good looks like, when they should involve you, and when they should not.
+
+If none of that has been clearly established, coming back to you is not necessarily a sign that the person is incapable. It may simply be the safest thing for them to do.
+
+The founder usually reinforces the pattern without meaning to.
+
+You answer because you know the answer.
+
+You review the work because you can spot the problem quickly.
+
+You step in because a customer is waiting.
+
+You make the decision because everyone is standing around and something needs to happen.
+
+In the moment, that often works. The problem is what happens over time.
+
+Your team learns that when they are unsure, they should ask you. You learn that stepping in is faster than waiting for someone else to figure it out. The company gets bigger, but your involvement does not get smaller.
+
+## That is why simply telling a founder to “delegate more” usually does not solve much.
+
+You can hand off more tasks, but if the role is unclear, decisions still require your approval, performance is handled differently depending on the manager, compensation decisions are made case by case, onboarding depends on who happens to be training the person, and important company knowledge still lives in your head, the work will keep finding its way back to you.
+
+### **The company itself has to change.**
+
+That may mean clearly defining what each leader owns. It may mean deciding which decisions managers can make without approval. It may mean putting a real performance process in place so every issue does not become a founder decision. It may mean creating a corrective action process so managers know how to address poor performance, what needs to be documented, what happens next, and when letting someone go is actually appropriate instead of guessing in the moment. It may mean creating a compensation model instead of deciding raises and offers based on urgency. It may mean improving hiring and onboarding so every new hire is not interviewed, selected, and trained differently. It may mean documenting the things only you currently know.
+
+The exact changes will look different in every company.
+
+The point is not to remove the founder. There will always be things that should depend on you.
+
+The work is figuring out which things those are—and intentionally changing the company so the rest no longer have to.
+
+That is one of the questions we spend a lot of time on at Orbsi:
+
+**What should still depend on the founder, and what should not?**
+
+The goal is not better delegation for the sake of delegation. The goal is a company where people know what they own, leaders can make the decisions their roles require, expectations are clear, and fewer things need to come back to you just to keep moving.
+
+The business already grew. The company has to catch up.
+
+**More on what changes on the [company redesign](https://www.orbsi.co/company-redesign) page.**
